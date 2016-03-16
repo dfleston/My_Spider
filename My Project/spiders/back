@@ -1,0 +1,21 @@
+item['brand'] = sel.xpath('a/@href').extract()
+            item['image_url'] = sel.xpath('text()').extract()
+            item['size'] = sel.xpath('text()').extract()
+            item['location'] = sel.xpath('text()').extract
+
+
+
+             brand = scrapy.Field()
+    price = scrapy.Field()
+    image_url = scrapy.Field()
+    size = scrapy.Field()
+    location = scrapy.Field()
+
+
+item['card'] = sel.css("div[class='card']").extract()
+
+
+ for sel in response.css("div[class='card']"):
+            item = DmozItem()
+            item['price'] = sel.css("div[class='card_top_price']").xpath("//strong").extract()
+            item['title'] = sel.css("div[class='card_content']").xpath("//h4").extract()
